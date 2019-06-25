@@ -60,3 +60,59 @@ add_filter( 'login_headertext', 'app_filter_login_headertext' );
  * External Libraries and Plugins.
  * ------------------------------------------------------------------------
  */
+
+/**
+ * Carbon Fields
+ */
+add_action( 'after_setup_theme', 'app_bootstrap_carbon_fields', 100 );
+add_action( 'carbon_fields_register_fields', 'app_bootstrap_carbon_fields_register_fields' );
+add_filter( 'carbon_fields_map_field_api_key', 'app_filter_carbon_fields_google_maps_api_key' );
+add_action( 'carbon_fields_post_meta_container_saved', 'after_post_saved');
+
+/*
+ * Change default column for custom posts
+ */
+
+add_filter('manage_joboffer_posts_columns','set_job_offers_columns');
+function set_job_offers_columns($columns){
+	$newcols = [
+	 'jobtitle' 				=> __('Emploi'),
+	 'businessname'			=> __('Entreprise'),
+	];
+	array_splice($columns,2,0,$newcols);
+	unset($columns['title']);
+	return $columns;
+}
+
+add_action('manage_joboffer_posts_custom_column', 'set_job_offers_column_content',10,2);
+function set_job_offers_column_content($column, $post_id){
+	switch ($column){
+		case 0:
+		 	echo carbon_get_post_meta($post_id, 'jobtitle');
+			break;
+		case 1:
+			echo carbon_get_post_meta($post_id, 'businessname');
+			break;
+		default:
+			echo "n/a";
+	}
+}
+
+add_filter('manage_internship_posts_columns', 'set_internship_columns');
+function set_internship_columns($columns){
+	$newcols =[
+	 'internship_title' => __('Stage'),
+	];
+	unset($columns['title']);
+	array_splice($columns, 1, 0, $newcols);
+	return $columns;
+}
+
+add_action('manage_internship_posts_custom_column', 'set_internship_column_content',10,2);
+function set_internship_column_content($column, $post_id){
+	switch ($column) {
+		case 0:
+			echo carbon_get_post_meta($post_id, 'title');
+			break;
+	}
+}

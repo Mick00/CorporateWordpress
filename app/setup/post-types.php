@@ -11,7 +11,52 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+register_post_type('joboffer',
+									 array(
+											 'labels'      => array(
+													 'name'          => __('Offre d\'emploi'),
+													 'singular_name' => __('Offre d\'emploi'),
+											 ),
+											 'public'              => true,
+											 'exclude_from_search' => false,
+											 'show_ui'             => true,
+											 'show_in_rest'       	=> true,
+											 'capability_type'     => 'post',
+											 'hierarchical'        => false,
+											 '_edit_link'          => 'post.php?post=%d',
+											 'query_var'           => true,
+											 'rewrite'             => array(
+												 'slug'       => __('emploi'),
+												 'with_front' => false,
+											 ),
+											 'supports'    => array('title','excerpt','revisions'),
+											 'menu_icon'   =>'dashicons-businessman'
+									 )
+);
 
+register_post_type('internship',
+									 array(
+											 'labels'      => array(
+													 'name'          => __('Stage'),
+													 'singular_name' => __('Stage'),
+											 	),
+											  'public'              => true,
+										 		'exclude_from_search' => false,
+										 		'show_ui'             => true,
+										 		'show_in_rest'       	=> true,
+												'show_in_nav_menus'		=> true,
+										 		'capability_type'     => 'post',
+										 		'hierarchical'        => false,
+										 		'_edit_link'          => 'post.php?post=%d',
+										 		'query_var'           => true,
+										 		'rewrite'             => array(
+										 			'slug'       => __('stages'),
+										 			'with_front' => false,
+										 		),
+											 	'supports'    => array('title', 'editor','page-attributes','revisions','thumbnail'),
+											 	'menu_icon'   =>'dashicons-welcome-learn-more'
+									 )
+);
 // phpcs:disable
 /*
 register_post_type( 'app_custom_post_type', array(
@@ -23,6 +68,7 @@ register_post_type( 'app_custom_post_type', array(
 		'view_item'          => __( 'View Custom Type', 'app' ),
 		'edit_item'          => __( 'Edit Custom Type', 'app' ),
 		'new_item'           => __( 'New Custom Type', 'app' ),
+		'view_item'          => __( 'View Custom Type', 'app' ),
 		'search_items'       => __( 'Search Custom Types', 'app' ),
 		'not_found'          => __( 'No custom types found', 'app' ),
 		'not_found_in_trash' => __( 'No custom types found in trash', 'app' ),

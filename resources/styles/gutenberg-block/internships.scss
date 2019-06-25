@@ -1,0 +1,30 @@
+.internships a {
+  text-decoration: none;
+  @extend %link-transform;
+  margin-left: 20px;
+  margin-right: 20px;
+  div.light {
+    color: $light;
+    &:hover {
+      color: $light-gray;
+    }
+    .text-muted {
+      color: $gray !important;
+      &:hover {
+        color: $light;
+      }
+    }
+  }
+
+}
+
+
+.internships img {
+  transition: all 0.15s ease-in;
+  width: 250px;
+  height: auto;
+}
+
+.internships a:hover img {
+  transform: scale(1.05,1.05);
+}

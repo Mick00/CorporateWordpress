@@ -15,5 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 register_nav_menus(
 	[
 		'main-menu' => __( 'Main Menu', 'app' ),
+		'left-footer-menu' => __('Left footer menu', 'app'),
 	]
 );

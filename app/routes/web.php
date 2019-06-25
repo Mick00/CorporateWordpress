@@ -16,6 +16,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Using our ExampleController to handle the homepage, for example.
 // phpcs:ignore
 // Route::get()->url( '/' )->handle( 'ExampleController@home' );
+#Route::get()->url('/offre-d-emploi/')->handle('App\Controllers\JobsOfferController@list_jobs');
+//Route::get()->where('type_post', 'joboffer')->view('jobofferlist');
+/*Route::get()
+->url('/offre-d-emploi/')
+->group(function (){
+	Route::get()->url('/')->handle('App\Controllers\JobsOfferController@list_jobs');
+	Route::get()->url('/{job}/')->handle(function ($request, $view, $joboffer){
+		echo "Job".$joboffer;
+		var_dump($request);
+		var_dump($view);
+	});
+});
 
 // If we do not want to hardcode a url, we can use one of the available route conditions instead.
 // phpcs:ignore
