@@ -8,6 +8,8 @@
  */
 
 ?>
+
+		</div>
 		<?php wp_footer(); ?>
 		<footer class="container-fluid text-light pt-5">
 			<div class="row">

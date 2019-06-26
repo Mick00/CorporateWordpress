@@ -10,6 +10,8 @@
 WPEmerge\render( 'header' );
 
 ?>
+<div class="page-transition">
+</div>
 <div class="container">
 	<div class="row">
 		<div class="col">

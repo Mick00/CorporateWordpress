@@ -1,0 +1,16 @@
+.page-transition {
+  position: fixed;
+  width: 0;
+  height: 100vh;
+  z-index: 100;
+  background-color: $primary;
+  border-color: $secondary;
+  border-style: solid;
+  border-width: 0px;
+  transition: all 0.4s ease-out;
+}
+
+html.is-animating .page-transition {
+  width: 100vw;
+  border-width: 0 120px 0 0;
+}

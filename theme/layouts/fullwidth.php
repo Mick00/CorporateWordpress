@@ -10,7 +10,6 @@
 WPEmerge\render( 'header' );
 ?>
 
-<div class="container-fluid">
 	<div class="row">
 		<div class="col">
 
@@ -27,5 +26,4 @@ WPEmerge\render( 'header' );
 			?>
 		</div>
 	</div>
-</div>
 <?php WPEmerge\render( 'footer' ); ?>
