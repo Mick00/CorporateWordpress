@@ -1,9 +1,9 @@
 import {WOW} from '~/wowjs/dist/wow.js';
 import '~/animate.css/animate.css';
 
-import Swup from '~/swup/dist/swup.js';
+//import Swup from '~/swup/dist/swup.js';
 
-const swup = new Swup();
+//const swup = new Swup();
 const wow = new WOW(
   {
     boxClass:     'wow',      // animated element css class (default is wow)
@@ -15,6 +15,6 @@ const wow = new WOW(
   }
 );
 wow.init();
-swup.on('contentReplaced', () =>{
-  wow.sync();
-});
+// swup.on('contentReplaced', () =>{
+//   wow.sync();
+// });
