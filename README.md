@@ -20,4 +20,4 @@ _The post is passed as an argument_
 _The page transition animation is done with_ [Swup](https://swup.js.org/)
 _Animations are done with_ [Wowjs](https://github.com/matthieua/WOW) _and_ [Animate.css](https://daneden.github.io/animate.css/). See the full list of animations [here](https://daneden.github.io/animate.css/)
 
-To add an animation to an element, 
+To add an animation to an element, add the class _wow_ and an animation from Animate.css.
