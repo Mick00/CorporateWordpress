@@ -31,7 +31,9 @@ Block::make(__('Offres d\'emploi'))
     }
     echo "</div>";
   else:
-    __('Aucune offre d\'emploi n\'est disponible pour le moment');
+    echo "<div class='p-5'>";
+    echo __('Aucune offre d\'emploi n\'est disponible pour le moment.');
+    echo "</div>";
   endif;
 });
 
