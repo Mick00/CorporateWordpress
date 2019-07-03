@@ -10,6 +10,7 @@
 WPEmerge\render( 'header' );
 ?>
 
+<div id="content-wrapper" class="container-fluid">
 	<div class="row">
 		<div class="col">
 

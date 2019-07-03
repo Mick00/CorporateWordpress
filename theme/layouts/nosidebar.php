@@ -10,9 +10,7 @@
 WPEmerge\render( 'header' );
 
 ?>
-<div class="page-transition">
-</div>
-<div class="container wrapper">
+<div id="content-wrapper" class="container">
 	<div class="row">
 		<div class="col">
       <?php WPEmerge\layout_content();?>
