@@ -2,7 +2,7 @@
 /dist/
 /resources/styles/theme/_sprite.scss
 /resources/styles/shared/_config.scss
-
+/resources/styles/shared/_override.scss
 # Development files
 /config.json
 
