@@ -23,6 +23,9 @@ Container::make('post_meta', __('Poste'))
 ->add_fields(array(
   Field::make('text','jobtitle',__('Poste'))->set_width(50),
   Field::make('text','joburl',__('Lien vers l\'offre d\'emploi'))->set_width(50),
+  Field::make('text','location', __('Lieu')),
+  Field::make('text', 'hours', __('Nombre d\'heures')),
+  Field::make('text', 'salary', __('Taux horaire')),
   Field::make('rich_text','jobdescription',__('Description')),
 ));
 
