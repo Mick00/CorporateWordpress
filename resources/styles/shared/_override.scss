@@ -1,0 +1,23 @@
+$btn-border-radius: 1.2em;
+
+h1::before {
+  content: '// ';
+  color: $secondary;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.goto::after {
+  content: '\f061';
+  margin-left: 10px;
+  padding-right: 5px;
+  padding-left: 0px;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  transition: padding 0.2s;
+}
+
+.goto:hover::after{
+  padding-right: 0;
+  padding-left: 5px;
+}
