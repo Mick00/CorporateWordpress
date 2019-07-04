@@ -8,26 +8,24 @@ Block::make(__('Offres d\'emploi'))
 ->set_description(__('Affiche les emplois sous forme de carte'))
 ->set_category('Propulsion')
 ->set_render_callback(function($fields){
-  $jobs = get_posts([
+  $args = [
     'post_type'       => 'joboffer',
     'post_status'     => 'publish',
     'orderby'         => 'date',
     'order'           => 'DESC',
-  ]);
+  ];
+  if(!empty($fields['quantity']) && $fields['quantity'] > 0){
+    $args['numberposts'] = $fields['quantity'];
+  }
+  $jobs = get_posts($args);
 
   if (sizeof($jobs) > 0):
     $loader = new \Twig\Loader\FilesystemLoader(APP_APP_DIR."src/View/jobs");
     $twig = new \Twig\Environment($loader);
     $jobCard = $twig->load('jobCard.twig');
     echo "<div class='joblist d-flex flex-wrap'>";
-    if ($fields['quantity']) {
-      for($i = 0; $i < $fields['quantity']; $i++){
-        echo $jobCard->render(get_job_data($jobs[$i]->ID));
-      }
-    } else {
-      foreach ($jobs as $job) {
-        echo $jobCard->render(get_job_data($job->ID));
-      }
+    foreach ($jobs as $job) {
+      echo $jobCard->render(get_job_data($job->ID));
     }
     echo "</div>";
   else:

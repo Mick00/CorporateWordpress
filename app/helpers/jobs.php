@@ -1,10 +1,11 @@
 <?php
 
 function get_job_data($post_id){
-  $data = get_post_meta_field($post_id,['businessname','businesslogo','businessurl','jobtitle', 'joburl','jobdescription']);
+  $data = get_post_meta_field($post_id,['businessname','businesslogo','businessurl','jobtitle', 'joburl','jobdescription', 'location', 'hours', 'salary']);
   $data['id'] = $post_id;
   $data['url'] = get_post_permalink($post_id);
   $data['businesslogo'] = wp_get_attachment_image_src($data['businesslogo'])[0];
+  $data['postedAgo'] = round((time()-strtotime(get_the_date('Y-m-d', $post_id)))/86400);
   return $data;
 }
 
