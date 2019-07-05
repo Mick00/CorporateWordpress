@@ -7,7 +7,7 @@ nav {
 
 }
 
-nav.admin-bar-showing {
+nav.admin-bar-showing.fixed-top {
   margin-top: 32px;
 }
 
@@ -30,6 +30,7 @@ nav.admin-bar-showing {
 }
 
 .navbar-brand {
+  max-width: 200px;
   .logo-light {
     opacity: 1;
   }
