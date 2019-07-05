@@ -11,9 +11,10 @@
     list-style: none;
   }
   a {
-    color: $light;
+    color: $warning;
+    text-decoration: none;
     &:hover {
-      color: $light-gray;
+      color: darken($warning,8%);
     }
   }
 }
