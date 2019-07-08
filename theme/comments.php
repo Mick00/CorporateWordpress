@@ -42,8 +42,8 @@ if ( post_password_required() ) {
 			'comments',
 			[
 				'enable_numbers' => true,
-				'prev_html' => '<a href="{URL}" class="btn btn-primary"><i class="fas fa-arrow-left"></i> ' . esc_html__( 'Previous Comment', 'app' ) . '</a>',
-				'next_html' => '<a href="{URL}" class="btn btn-primary">' . esc_html__( 'Next Comment', 'app' ) . ' <i class="fas fa-arrow-right"></i></a>',
+				'prev_html' => '<a href="{URL}" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> ' . esc_html__( 'Previous Comment', 'app' ) . '</a>',
+				'next_html' => '<a href="{URL}" class="btn btn-secondary">' . esc_html__( 'Next Comment', 'app' ) . ' <i class="fas fa-arrow-right"></i></a>',
 				]
 		);
 		?>
