@@ -43,3 +43,10 @@
     width: 60px;
   }
 }
+
+.wp-block-coblocks-hero.has-gradient-background .has-background-overlay::before {
+  background-image: $primary-gradient;
+}
+.has-gradient-background {
+  background-image: $primary-gradient;
+}
