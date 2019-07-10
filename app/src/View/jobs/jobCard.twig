@@ -8,15 +8,15 @@
     <span class="text-secondary d-block">{{jobtitle}}</span>
     <span class="d-block"><a href="{{businessurl}}">{{businessname}}</a></span>
     {% if location %}
-    <span class="text-muted d-block"><i class="fas fa-map-marker-alt"></i>{{location}}</span>
+    <span class="text-muted d-block"><i class="fas fa-map-marker-alt"></i> {{location}}</span>
     {% endif %}
-    <div class="my-1">
-      <span><div class="propulsion-horloge d-inline-block mr-1"></div>Il y a {{postedAgo}} jours</span>
+    <div>
+      <span><i class="fas fa-clock text-secondary"></i> Il y a {{postedAgo}} jours</span>
       {% if hours %}
-      <span><div class="propulsion-mallette d-inline-block mr-1"></div>{{hours}}</span>
+      <span><i class="fas fa-suitcase text-secondary"></i> {{hours}}h/sem</span>
       {% endif %}
       {% if salary %}
-      <span><div class="propulsion-dollars d-inline-block mr-1"></div>{{salary}}/h</span>
+      <span><i class="fas fa-dollar-sign text-secondary"></i> {{salary}}$/h</span>
       {% endif %}
     </div>
     <a class="btn goto btn-warning btn-sm" href="{{joburl}}">Voir l'offre</a>
