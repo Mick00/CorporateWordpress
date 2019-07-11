@@ -50,11 +50,20 @@ Block::make(__('Offres de stages'))
   $loader = new \Twig\Loader\FilesystemLoader(APP_APP_DIR."src/View/internships");
   $twig = new \Twig\Environment($loader);
   $internshipCard = $twig->load('internshipCard.twig');
-  echo "<div class='internships d-flex flex-wrap justify-content-center flex-sm-column flex-md-row'>";
+//d-flex flex-wrap justify-content-center flex-sm-column flex-md-row
+?>
+<div class="internships">
+  <i class="fas fa-chevron-left left-carousel-arrow icon-huge"></i>
+  <div class='internships-carousel'>
+  <?php
   foreach ($interships as $internship) {
     echo $internshipCard->render(get_internship_data($internship->ID) + $fields);
   }
-  echo "</div>";
+  ?>
+  </div>
+  <i class="fas fa-chevron-right right-carousel-arrow icon-huge"></i>
+</div>
+<?php
 });
 
 function render_block_with_twig($template, $param = []){
