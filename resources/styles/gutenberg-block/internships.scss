@@ -3,7 +3,7 @@
   @extend %link-transform;
   margin-left: 20px;
   margin-right: 20px;
-  div.light {
+  &.light {
     color: $light;
     &:hover {
       color: $light-gray;
@@ -21,10 +21,23 @@
 
 .internships img {
   transition: all 0.15s ease-in;
-  width: 250px;
+  width: 220px;
   height: auto;
 }
 
 .internships a:hover img {
   transform: scale(1.05,1.05);
+}
+i.right-carousel-arrow, i.left-carousel-arrow {
+  color: rgba($light, 0.7);
+  transition: color 0.15s ease-in-out;
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  &:hover {
+    color: $light;
+  }
+}
+i.right-carousel-arrow {
+  right: 0;
 }
