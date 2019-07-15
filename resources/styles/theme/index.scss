@@ -23,6 +23,8 @@
 
 @import '~/bootstrap/scss/bootstrap.scss';
 @import './integrate/*.scss';
+@import './animations/*.scss';
+@import './utilities/*.scss';
 @import '~@styles/gutenberg-block/index.scss';
 @import './_generic*.scss';
 @import './_page-title.scss';
