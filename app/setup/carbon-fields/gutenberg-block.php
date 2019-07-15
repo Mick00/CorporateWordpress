@@ -54,7 +54,7 @@ Block::make(__('Offres de stages'))
 ?>
 <div class="internships">
   <i class="fas fa-chevron-left left-carousel-arrow icon-huge"></i>
-  <div class='internships-carousel'>
+  <div class='internships-carousel mx-4'>
   <?php
   foreach ($interships as $internship) {
     echo $internshipCard->render(get_internship_data($internship->ID) + $fields);

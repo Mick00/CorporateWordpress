@@ -3,7 +3,7 @@
   @extend %link-transform;
   margin-left: 20px;
   margin-right: 20px;
-  div.light {
+  &.light {
     color: $light;
     &:hover {
       color: $light-gray;
