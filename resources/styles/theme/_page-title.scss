@@ -6,10 +6,13 @@
 }
 
 .article__head {
-
   ul {
     list-style: none;
   }
+}
+
+.article--single .article__head{
+  color: $light;
   a {
     color: $warning;
     text-decoration: none;
@@ -22,5 +25,5 @@
 .gradient-overlay {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to top, rgba($primary,0.8), rgba($secondary, 0.8));
+  background-image: $primary-gradient;
 }
