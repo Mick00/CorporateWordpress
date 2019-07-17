@@ -116,3 +116,4 @@ function set_internship_column_content($column, $post_id){
 			break;
 	}
 }
+add_filter( 'wp_nav_menu_items', 'add_socials_to_menu',10,2 );
