@@ -33,7 +33,6 @@
 @import './_articles.scss';
 @import './_body.scss';
 @import './page-transition.scss';
-@import './_flex.scss';
 
 .wp-block-coblocks-hero.has-gradient-background .has-background-overlay::before {
   background-image: $primary-gradient;
