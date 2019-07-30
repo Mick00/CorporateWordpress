@@ -34,6 +34,17 @@
 @import './_body.scss';
 @import './page-transition.scss';
 
+.flex-item.department {
+  max-width: 80px;
+  p,h4,h5,h6 {
+    max-width: 18em;
+    color: $light;
+  }
+  img {
+    width: 60px;
+  }
+}
+
 .wp-block-coblocks-hero.has-gradient-background .has-background-overlay::before {
   background-image: $primary-gradient;
 }

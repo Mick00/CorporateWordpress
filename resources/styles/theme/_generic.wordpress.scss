@@ -343,7 +343,7 @@
 
   .form-submit input {
     @extend .btn;
-    @extend .btn-secondary;
+    @extend .btn-primary;
     cursor: pointer;
   }
 }

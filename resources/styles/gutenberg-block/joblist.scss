@@ -1,4 +1,12 @@
-.joblist > div {
-  flex-grow: 1;
-  margin-left: 20px;
+.joblist {
+  justify-content: space-evenly;
+  .jobcard {
+    flex: 1 1 45%;
+  }
+ .logo {
+    flex: 1 1 30%;
+  }
+  .jobinfo {
+    flex: 2 2 70%;
+  }
 }

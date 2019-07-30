@@ -1,7 +1,9 @@
-<div class="jobcard d-flex">
-  <div class="logo">
+<div class="jobcard d-flex m-4">
+  {% if businesslogo %}
+  <div class="logo mr-4">
     <img class="rounded" src="{{businesslogo}}" alt="Logo de l'entreprise {{businessname}}">
   </div>
+  {% endif %}
   <div class="jobinfo">
     <span class="text-secondary d-block">{{jobtitle}}</span>
     <span class="d-block"><a href="{{businessurl}}">{{businessname}}</a></span>
@@ -17,6 +19,6 @@
       <span><i class="fas fa-dollar-sign text-secondary"></i> {{salary}}$/h</span>
       {% endif %}
     </div>
-    <a class="btn goto btn-warning" href="{{joburl}}">Voir l'offre</a>
+    <a class="btn goto btn-warning btn-sm" href="{{joburl}}">Voir l'offre</a>
   </div>
 </div>

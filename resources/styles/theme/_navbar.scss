@@ -4,6 +4,7 @@ nav {
     margin-left: auto;
     margin-right: 0;
   }
+
 }
 
 nav.admin-bar-showing.fixed-top {
@@ -20,12 +21,10 @@ nav.admin-bar-showing.fixed-top {
 
     .logo-dark {
       opacity: 1;
-
     }
     .logo-light {
       opacity: 0;
     }
-
   }
 
   &.not-at-top {
@@ -40,31 +39,3 @@ nav.admin-bar-showing.fixed-top {
   position: absolute;
   opacity: 0;
 }
-// #nav.transparent-nav {
-//   .navbar-brand, .nav-item.active a {
-//     color: $light !important;
-//   }
-//   .nav-item .nav-link{
-//     color: rgba($light, 0.7) !important;
-//   }
-//   .navbar-brand {
-//     .logo-light{
-//       opacity: 0;
-//     }
-//     .logo-dark {
-//       opacity: 1;
-//     }
-//   }
-//
-// }
-//
-// .navbar-brand {
-//   max-width: 200px;
-//   .logo-light {
-//     opacity: 1;
-//   }
-//   .logo-dark {
-//     position: absolute;
-//     opacity: 0;
-//   }
-// }

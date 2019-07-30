@@ -13,10 +13,10 @@
  $cyan:    map-get($color,'material-cyan');
 
  $primary:       $blue;
- $secondary:     map-get($color,'material-indigo');
+ $secondary:     map-get($color,'material-light-blue');
  $success:       $green;
  $info:          $cyan;
- $warning:       map-get($color,'material-yellow');
+ $warning:       map-get($color,'material-orange');
  $danger:        $red;
  $light:         #eeeeee;
  $dark:          #212121;
@@ -34,6 +34,6 @@
   transition: color 0.2s ease-out;
 }
 
-$primary-gradient: linear-gradient(to bottom, $secondary, $primary);
+$primary-gradient: linear-gradient(to top, $secondary, $primary);
 $navbar-dark-color:  rgba($light, .75);
 $navbar-dark-hover-color: rgba($light, .90);
