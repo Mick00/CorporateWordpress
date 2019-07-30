@@ -11,7 +11,7 @@
 
 		</div>
 		<?php wp_footer(); ?>
-		<footer class="container-fluid text-light pt-5">
+		<footer class="container-fluid text-light pt-2">
 			<div class="row">
 				<div class="widgets-container container d-flex flex-wrap justify-content-center">
 					<?php if(is_active_sidebar('footerleft')): ?>
