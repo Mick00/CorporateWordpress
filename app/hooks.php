@@ -75,43 +75,45 @@ add_action( 'carbon_fields_post_meta_container_saved', 'after_post_saved');
 
 add_filter('manage_joboffer_posts_columns','set_job_offers_columns');
 function set_job_offers_columns($columns){
+	unset($columns['cb']);
 	$newcols = [
+		'cb'							=> __('<input type="checkbox" />'),
 	 'jobtitle' 				=> __('Emploi'),
 	 'businessname'			=> __('Entreprise'),
 	];
-	array_splice($columns,2,0,$newcols);
+	// array_splice($columns,2,0,$newcols);
 	unset($columns['title']);
+	$columns = $newcols + $columns;
 	return $columns;
 }
 
 add_action('manage_joboffer_posts_custom_column', 'set_job_offers_column_content',10,2);
 function set_job_offers_column_content($column, $post_id){
 	switch ($column){
-		case 0:
+		case 'jobtitle':
 		 	echo carbon_get_post_meta($post_id, 'jobtitle');
 			break;
-		case 1:
+		case 'businessname':
 			echo carbon_get_post_meta($post_id, 'businessname');
 			break;
-		default:
-			echo "n/a";
 	}
 }
 
-add_filter('manage_internship_posts_columns', 'set_internship_columns');
+add_filter('manage_internship_posts_columns', 'set_internship_columns',10,1);
 function set_internship_columns($columns){
-	$newcols =[
-	 'internship_title' => __('Stage'),
-	];
-	unset($columns['title']);
-	array_splice($columns, 1, 0, $newcols);
+	// $newcols =[
+	//  'internship_title' => __('Stage'),
+	// ];
+	// unset($columns['title']);
+	// array_splice($columns, 1, 0, $newcols);
+	// var_dump($columns);
 	return $columns;
 }
 
 add_action('manage_internship_posts_custom_column', 'set_internship_column_content',10,2);
 function set_internship_column_content($column, $post_id){
 	switch ($column) {
-		case 0:
+		case 'title':
 			echo carbon_get_post_meta($post_id, 'title');
 			break;
 	}
