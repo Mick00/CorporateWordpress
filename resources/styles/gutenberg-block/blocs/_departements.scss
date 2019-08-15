@@ -1,0 +1,21 @@
+.departments-icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  div {
+    text-align: center;
+    max-width: 14em;
+    a {
+      margin-top: 0.5em;
+      display: inline-block;
+      color: inherit;
+      transition: transform 0.2s ease-in-out;
+      h4 {
+        margin-top: 0.5em;
+      }
+      &:hover {
+        text-decoration: none;
+        transform: translateY(-7px);
+      }
+    }
+  }
+}

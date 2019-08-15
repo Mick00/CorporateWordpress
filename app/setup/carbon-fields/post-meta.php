@@ -35,6 +35,9 @@ Container::make('post_meta',__('Stage'))
   Field::make('text','title',__('Poste'))->set_width(40),
   Field::make('text','length', __('Durée'))->set_width(30),
   Field::make('image', 'image', __('Illustration'))->set_width(50),
+  Field::make('text', 'icon', __('icone departementale'))
+  ->set_help_text("Insérer un tag HTML de FontAwesome")
+  ->set_width(50),
   Field::make('file', 'doc', __('Fichier pdf'))->set_width(50)
   ->set_type('application/pdf'),
 ));
