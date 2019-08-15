@@ -1,12 +1,13 @@
 <?php
-$class = "head-page article__head";
+$class = "head-page article__head  alignfull d-flex align-items-center";
 $style = "style=\"\"";
 global $post;
 if (has_post_thumbnail( $post->ID )) {
   $imageurl = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post_image')[0];
+
   $style = sprintf("background-image: url('%s')",$imageurl);
   $style = "style=\"".$style."\"";
-  $class.= " has-bg alignfull d-flex align-items-center";
+  $class.= " has-bg";
 }
 if (is_singular()):?>
   <header class="<?=$class?>" <?=$style?>>

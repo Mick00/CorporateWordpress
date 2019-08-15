@@ -1,4 +1,4 @@
-.article__head.has-bg {
+.article__head {
   background-position: center;
   background-size: auto;
   background-repeat: no-repeat;
@@ -26,4 +26,8 @@
   width: 100%;
   height: 100%;
   background-image: $primary-gradient;
+}
+
+.has-bg .gradient-overlay {
+  opacity: 0.85;
 }
