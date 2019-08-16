@@ -15,6 +15,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+<?php if (comments_open()):?>
 <section class="section-comments" id="comments">
 	<?php if ( have_comments() ) : ?>
 		<h3><?php comments_number( __( 'No Responses', 'app' ), __( 'One Response', 'app' ), __( '% Responses', 'app' ) ); ?></h3>
@@ -58,3 +59,4 @@ if ( post_password_required() ) {
 	);
 	?>
 </section>
+<?php endif;?>

@@ -110,3 +110,6 @@ function set_internship_column_content($column, $post_id){
 }
 add_filter( 'wp_nav_menu_items', 'add_socials_to_menu',10,2 );
 add_filter('emergence_show_next_pagination_single_loop', function (){return false;});
+add_action('emergence_content_after_content', function(){
+	WPEmerge\render('internships/callToAction');
+});
