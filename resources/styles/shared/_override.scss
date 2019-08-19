@@ -54,3 +54,13 @@ nav, .nav {
     padding-left: 5px;
   }
 }
+.wp-block-file .wp-block-file__button{
+  background-color: $primary;
+  &::after {
+    color: inherit;
+    content: '\f56d';
+    font-family: 'Font Awesome 5 Free';
+    margin-left: 1em;
+    font-weight: 900;
+  }
+}

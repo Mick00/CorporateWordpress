@@ -46,6 +46,9 @@ Block::make(__('Offres de stages'))
   $interships = get_posts([
     'post_type'   => 'internship',
     'post_status' => 'publish',
+    'numberposts' => '-1',
+    'order_by'    => 'menu_order',
+	  'order' 	    => 'ASC',
   ]);
   $loader = new \Twig\Loader\FilesystemLoader(APP_APP_DIR."src/View/internships");
   $twig = new \Twig\Environment($loader);
