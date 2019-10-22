@@ -12,50 +12,72 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 register_post_type('joboffer',
-									 array(
-											 'labels'      => array(
-													 'name'          => __('Offre d\'emploi'),
-													 'singular_name' => __('Offre d\'emploi'),
-											 ),
-											 'public'              => true,
-											 'exclude_from_search' => false,
-											 'show_ui'             => true,
-											 'show_in_rest'       	=> true,
-											 'capability_type'     => 'post',
-											 'hierarchical'        => false,
-											 '_edit_link'          => 'post.php?post=%d',
-											 'query_var'           => true,
-											 'rewrite'             => array(
-												 'slug'       => __('emploi'),
-												 'with_front' => false,
-											 ),
-											 'supports'    => array('title','excerpt','revisions'),
-											 'menu_icon'   =>'dashicons-businessman'
-									 )
+	array(
+			'labels'      => array(
+					'name'          => __('Offre d\'emploi'),
+					'singular_name' => __('Offre d\'emploi'),
+			),
+			'public'              => true,
+			'exclude_from_search' => false,
+			'show_ui'             => true,
+			'show_in_rest'       	=> true,
+			'capability_type'     => 'post',
+			'hierarchical'        => false,
+			'_edit_link'          => 'post.php?post=%d',
+			'query_var'           => true,
+			'rewrite'             => array(
+				'slug'       => __('emploi'),
+				'with_front' => false,
+			),
+			'supports'    => array('title','excerpt','revisions'),
+			'menu_icon'   =>'dashicons-businessman'
+	)
 );
 
+register_post_type('department', [
+	'labels'      => array(
+		'name'          => __('Départements'),
+		'singular_name' => __('Département'),
+	),
+	'public'              => true,
+	'exclude_from_search' => false,
+	'show_ui'             => true,
+	'show_in_rest'       	=> true,
+	'show_in_nav_menus'		=> true,
+	'capability_type'     => 'post',
+	'hierarchical'        => false,
+	'_edit_link'          => 'post.php?post=%d',
+	'query_var'           => true,
+	'rewrite'             => array(
+		'slug'       => __('departement'),
+		'with_front' => false,
+),
+'supports'    => array('title','page-attributes','thumbnail'),
+'menu_icon'   =>'dashicons-welcome-learn-more'
+]);
+
 register_post_type('internship',
-									 array(
-											 'labels'      => array(
-													 'name'          => __('Stage'),
-													 'singular_name' => __('Stage'),
-											 	),
-											  'public'              => true,
-										 		'exclude_from_search' => false,
-										 		'show_ui'             => true,
-										 		'show_in_rest'       	=> true,
-												'show_in_nav_menus'		=> true,
-										 		'capability_type'     => 'post',
-										 		'hierarchical'        => false,
-										 		'_edit_link'          => 'post.php?post=%d',
-										 		'query_var'           => true,
-										 		'rewrite'             => array(
-										 			'slug'       => __('stages'),
-										 			'with_front' => false,
-										 		),
-											 	'supports'    => array('title', 'editor','page-attributes','revisions','thumbnail'),
-											 	'menu_icon'   =>'dashicons-welcome-learn-more'
-									 )
+	array(
+			'labels'      => array(
+					'name'          => __('Stage'),
+					'singular_name' => __('Stage'),
+			),
+			'public'              => true,
+			'exclude_from_search' => false,
+			'show_ui'             => true,
+			'show_in_rest'       	=> true,
+			'show_in_nav_menus'		=> true,
+			'capability_type'     => 'post',
+			'hierarchical'        => false,
+			'_edit_link'          => 'post.php?post=%d',
+			'query_var'           => true,
+			'rewrite'             => array(
+				'slug'       => __('stage'),
+				'with_front' => false,
+			),
+			'supports'    => array('title', 'editor','page-attributes','revisions','thumbnail'),
+			'menu_icon'   =>'dashicons-welcome-learn-more'
+	)
 );
 // phpcs:disable
 /*

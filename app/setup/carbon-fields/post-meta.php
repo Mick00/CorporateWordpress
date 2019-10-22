@@ -29,6 +29,15 @@ Container::make('post_meta', __('Poste'))
   Field::make('rich_text','jobdescription',__('Description')),
 ));
 
+Container::make('post_meta', __('Département'))
+->where('post_type', '=', 'department')
+->add_fields([
+  Field::make('image', 'image', __('Illustration'))->set_width(50),
+  Field::make('text', 'icon', __('icone departementale'))
+    ->set_help_text("Insérer un tag HTML de FontAwesome")
+    ->set_width(50),
+]);
+
 Container::make('post_meta',__('Stage'))
 ->where('post_type','=','internship')
 ->add_fields(array(
