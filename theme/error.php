@@ -1,6 +1,6 @@
 <?php
 /**
- * App Layout: layouts/sidebar.php
+ * App Layout: layouts/nosidebar.php
  *
  * Generic error fallback view.
  * Used if no view is found for the current error status code.
@@ -9,10 +9,9 @@
  */
 
 ?>
-<p>
+<p class="my-5">
 	<?php
 	printf(
-
 		/* translators: generic error page content; placeholders represents homepage opening and closing anchor tags */
 		esc_html__( 'Please check the URL for proper spelling and capitalization. If you\'re having trouble locating a destination, try visiting the %1$shome page%2$s.', 'app' ),
 		'<a href="' . esc_url( home_url( '/' ) ) . '">',

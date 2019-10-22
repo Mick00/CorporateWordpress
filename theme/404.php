@@ -1,6 +1,6 @@
 <?php
 /**
- * App Layout: layouts/sidebar.php
+ * App Layout: layouts/nosidebar.php
  *
  * This is the template that is used for displaying 404 errors.
  *
@@ -8,9 +8,11 @@
  */
 
 ?>
-<div class="p-5">
+<div class="wp-block-spacer" style="height: 100px;"></div>
+
+<div class="py-3">
 	<p>
-		<h2><?php esc_html__('La page que vous cherchez n\'a pas été trouvé')?></h2>
+		<h3><?php printf(esc_html__('The page you are looking for could not be found'))?></h3>
 		<?php
 		printf(
 			/* translators: 404 page content; placeholders represents homepage opening and closing anchor tags */
@@ -20,4 +22,5 @@
 		);
 		?>
 	</p>
+	<?php WPEmerge\render( 'searchform' );  ?>
 </div>
