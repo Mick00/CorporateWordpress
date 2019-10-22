@@ -13,6 +13,7 @@ Block::make(__('Departments'))
   $interships = get_posts([
     'post_type'   => 'internship',
     'post_status' => 'publish',
+	'numberposts' => -1,
   ]);
 ?>
 <div class="departments-icon">
@@ -20,7 +21,7 @@ Block::make(__('Departments'))
     <div class="department">
       <a href="<?=get_permalink($internship)?>">
         <?=carbon_get_post_meta($internship->ID,'icon')?>
-        <h4><?=$internship->post_title?></h4>
+        <p class="font-weight-bold"><?=carbon_get_post_meta($internship->ID, 'title')?></p>
       </a>
     </div>
   <?php } ?>

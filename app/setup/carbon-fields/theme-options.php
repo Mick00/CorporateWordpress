@@ -32,3 +32,17 @@ function add_socials_fields(){
 	}
 	return $fields;
 }
+
+Container::make('theme_options', __('Organization information', 'app'))
+	->set_page_file('organization')
+	->add_fields([
+		Field::make('text', 'org_name', __( 'Organization name' ))->set_width(70),
+		Field::make('image', 'org_logo', __('Organization logo'))->set_value_type( 'url' )->set_width(30),
+	])
+	->add_fields([
+		Field::make('text', 'org_street_address', __('Street address'))->set_width(50),
+		Field::make('text', 'org_city', __('City'))->set_width(25),
+		Field::make('text', 'org_region', __('Region'))->set_width(25),
+		Field::make('text', 'org_country', __('Country'))->set_width(50),
+		Field::make('text', 'org_postal_code', __('Postal Code'))->set_width(50),
+	]);

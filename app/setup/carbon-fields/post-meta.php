@@ -36,10 +36,22 @@ Container::make('post_meta',__('Stage'))
   Field::make('text','length', __('Durée'))->set_width(30),
   Field::make('image', 'image', __('Illustration'))->set_width(50),
   Field::make('text', 'icon', __('icone departementale'))
-  ->set_help_text("Insérer un tag HTML de FontAwesome")
-  ->set_width(50),
+    ->set_help_text("Insérer un tag HTML de FontAwesome")
+    ->set_width(50),
   Field::make('file', 'doc', __('Fichier pdf'))->set_width(50)
-  ->set_type('application/pdf'),
+    ->set_type('application/pdf'),
+  Field::make('rich_text', 'description', __('Description du poste'))
+    ->set_help_text("Pour Google Jobs"),
+  Field::make( 'checkbox', 'telecommute', __( 'Télétravail possible?' ) )
+    ->set_option_value( 'oui' ),
+  Field::make( 'radio', 'type', __( 'Choose Option' ) )
+  ->set_options([
+    "INTERN"    => __('Stage'),
+    "FULL_TIME" => __('Temps plein'),
+    "PART_TIME" => __('Temps partiel'),
+    "TEMPORARY" => __('Temporaire'),
+    "VOLUNTEER" => __('Volontaire'),
+  ])
 ));
 
 // phpcs:disable
