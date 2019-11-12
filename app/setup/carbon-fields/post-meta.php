@@ -41,26 +41,33 @@ Container::make('post_meta', __('Département'))
 Container::make('post_meta',__('Stage'))
 ->where('post_type','=','internship')
 ->add_fields(array(
-  Field::make('text','title',__('Poste'))->set_width(40),
+  Field::make('text','title',__('Poste'))->set_width(40)->set_help_text("Titre dans Google Jobs"),
   Field::make('text','length', __('Durée'))->set_width(30),
-  Field::make('image', 'image', __('Illustration'))->set_width(50),
-  Field::make('text', 'icon', __('icone departementale'))
-    ->set_help_text("Insérer un tag HTML de FontAwesome")
-    ->set_width(50),
-  Field::make('file', 'doc', __('Fichier pdf'))->set_width(50)
-    ->set_type('application/pdf'),
-  Field::make('rich_text', 'description', __('Description du poste'))
-    ->set_help_text("Pour Google Jobs"),
-  Field::make( 'checkbox', 'telecommute', __( 'Télétravail possible?' ) )
-    ->set_option_value( 'oui' ),
-  Field::make( 'radio', 'type', __( 'Choose Option' ) )
+  Field::make('image', 'image', __('Illustration'))->set_width(30),
+  Field::make('rich_text', 'small_description', __('Description du poste'))
+  ->set_help_text("Description courte du poste pour afficher dans la fiche du département"),
+  Field::make('rich_text', 'description', __('Description du poste pour Google Jobs'))
+  ->set_help_text("Ce texte apparaîtra dans Google Jobs. Utilisez seulement du texte")->set_width(70),
+  Field::make( 'radio', 'type', __( 'Type' ) )
   ->set_options([
     "INTERN"    => __('Stage'),
     "FULL_TIME" => __('Temps plein'),
     "PART_TIME" => __('Temps partiel'),
     "TEMPORARY" => __('Temporaire'),
     "VOLUNTEER" => __('Volontaire'),
-  ])
+    ])->set_width(30),
+  Field::make('association', 'internship_department', __('Département'))
+  ->set_types([
+    [
+      "type"      => "post",
+      "post_type" => "department"
+    ]
+  ])->set_min(1)->set_max(1)->set_width(70),
+  Field::make('file', 'doc', __('Description complete (PDF)'))
+    ->set_type('application/pdf')
+    ->set_width(30),
+  Field::make( 'checkbox', 'telecommute', __( 'Télétravail possible?' ) )
+  ->set_option_value( 'oui' ),
 ));
 
 // phpcs:disable

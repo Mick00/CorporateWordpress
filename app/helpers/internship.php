@@ -15,7 +15,16 @@ function internship_post_meta($view, $post){
   }
   return $view;
 }
-
+function jobsType($key){
+  $types = [
+    "INTERN"    => __('Stage'),
+    "FULL_TIME" => __('Temps plein'),
+    "PART_TIME" => __('Temps partiel'),
+    "TEMPORARY" => __('Temporaire'),
+    "VOLUNTEER" => __('Volontaire'),
+  ];
+  return $types[$key];
+}
 function add_structured_job_posting(){
   if (get_post_type() !== 'internship') return;
   $jobPosting = [

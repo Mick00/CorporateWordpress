@@ -113,5 +113,10 @@ add_filter('emergence_show_next_pagination_single_loop', function (){return fals
 add_action('emergence_content_after_content', function(){
 	WPEmerge\render('internships/callToAction');
 });
+add_action('emergence_content_after_content', function(){
+	if(get_post_type() === "department"){
+		WPEmerge\render('departements/listjobs');
+	}
+},1,0);
 //Callback in internship.php
 add_action('wp_head', 'add_structured_job_posting');
